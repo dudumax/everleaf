@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Tasks</h1>
+
+
+
+    <% @tasks.each do |task| %>
+      <tr>
+        <p><%= task.title %></p>
+        <p><%= task.inquiry %></p>
+        <p><%= link_to 'Show', task %>
+           <%= link_to 'Edit', edit_task_path(task) %>
+        <p><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+      <hr/>
+    <% end %>
+ 
+
+<br>
+
+<%= link_to 'New Task', new_task_path %>
