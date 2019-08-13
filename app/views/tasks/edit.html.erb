@@ -1,6 +1,19 @@
-<h1>Editing Task</h1>
+<h1> Edit Task </h1>
 
-<%= render 'form', task: @task %>
 
-<%= link_to 'Show', @task %> |
-<%= link_to 'Back', tasks_path %>
+<%= form_for @task do |f| %>
+<p>
+        <%= f.label :title %><br />
+        <%= f.text_field :title　%>
+</p>
+
+<p>
+        <%= f.label :inquiry %>
+        <%=f.text_area :inquiry　%>
+</p>
+
+<p>
+        <%= f.submit "Update Task" %>
+</p>
+
+<% end %>

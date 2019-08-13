@@ -2,7 +2,7 @@ class CreateTasks < ActiveRecord::Migration[5.2]
   def change
     create_table :tasks do |t|
       t.string :title
-      t.text :inquiry
+      t.string :inquiry
 
       t.timestamps
     end

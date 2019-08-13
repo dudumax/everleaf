@@ -1,14 +1,4 @@
-<p id="notice"><%= notice %></p>
+<h1><%= @task.title %></h1>
+<p> <%= @task.inquiry %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @task.title %>
-</p>
-
-<p>
-  <strong>Inquiry:</strong>
-  <%= @task.inquiry %>
-</p>
-
-<%= link_to 'Edit', edit_task_path(@task) %> |
-<%= link_to 'Back', tasks_path %>
+<small><%= @task.created_at %></small>

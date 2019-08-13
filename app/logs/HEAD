@@ -1,0 +1,14 @@
+0000000000000000000000000000000000000000 c040f50c3418e1b63957441660abdfa8e61ecebb dudumax <bilfinga@gmail.com> 1565428978 +0000	commit (initial): init
+c040f50c3418e1b63957441660abdfa8e61ecebb 30dcb5cce12970cf05addc8fbd71cae289d31fac dudumax <bilfinga@gmail.com> 1565430002 +0000	commit: README.md init
+30dcb5cce12970cf05addc8fbd71cae289d31fac 30dcb5cce12970cf05addc8fbd71cae289d31fac dudumax <bilfinga@gmail.com> 1565431412 +0000	checkout: moving from master to feature-1
+30dcb5cce12970cf05addc8fbd71cae289d31fac 1896942dce8d292ab376b1a2e8857939f715d8f9 dudumax <bilfinga@gmail.com> 1565431500 +0000	commit: init
+1896942dce8d292ab376b1a2e8857939f715d8f9 30dcb5cce12970cf05addc8fbd71cae289d31fac dudumax <bilfinga@gmail.com> 1565431558 +0000	checkout: moving from feature-1 to master
+30dcb5cce12970cf05addc8fbd71cae289d31fac 1896942dce8d292ab376b1a2e8857939f715d8f9 dudumax <bilfinga@gmail.com> 1565431963 +0000	checkout: moving from master to feature-1
+1896942dce8d292ab376b1a2e8857939f715d8f9 1896942dce8d292ab376b1a2e8857939f715d8f9 dudumax <bilfinga@gmail.com> 1565432050 +0000	checkout: moving from feature-1 to issues/#1
+1896942dce8d292ab376b1a2e8857939f715d8f9 30dcb5cce12970cf05addc8fbd71cae289d31fac dudumax <bilfinga@gmail.com> 1565432772 +0000	checkout: moving from issues/#1 to master
+30dcb5cce12970cf05addc8fbd71cae289d31fac b8a45c2ef03b8e40d030ae89978ea2b104d35b6e dudumax <bilfinga@gmail.com> 1565432811 +0000	commit: new ER Diagram
+b8a45c2ef03b8e40d030ae89978ea2b104d35b6e 4b0403b01292f6d06297edfd1c407762e9338cbf dudumax <bilfinga@gmail.com> 1565436819 +0000	commit: README.md edit
+4b0403b01292f6d06297edfd1c407762e9338cbf 99f0456f00cc3e244a2db926f952d649a5ccbc05 dudumax <bilfinga@gmail.com> 1565497474 +0000	commit: models gen
+99f0456f00cc3e244a2db926f952d649a5ccbc05 638e5ed13345ad3ea3afa5d108d074a9693edbe2 dudumax <bilfinga@gmail.com> 1565519484 +0000	commit: models
+638e5ed13345ad3ea3afa5d108d074a9693edbe2 14408d1365bd64a09174f216f26d2c65fe8c048c dudumax <bilfinga@gmail.com> 1565520462 +0000	commit: task table
+14408d1365bd64a09174f216f26d2c65fe8c048c 0dcfbc249ef77a1ae6ece314def66c06390bedaf dudumax <bilfinga@gmail.com> 1565610655 +0000	commit: task and user scaffolds
