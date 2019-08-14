@@ -12,7 +12,7 @@ class TasksController < ApplicationController
     end 
     
     def create
-          @task=Task.new(params[:post].permit(:title, :inquiry))
+          @task=Task.new(task_params)
         
         if @task.save
             redirect_to tasks_path, :notice=> "Your task was saved"
