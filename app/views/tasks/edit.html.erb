@@ -3,17 +3,17 @@
 
 <%= form_for @task do |f| %>
 <p>
-        <%= f.label :title %><br />
-        <%= f.text_field :title　%>
+    <%= f.label :title %><br/>
+    <%= f.text_field :title  %>
 </p>
 
 <p>
-        <%= f.label :inquiry %>
-        <%=f.text_area :inquiry　%>
+    <%= f.label :inquiry  %><br/>
+    <%= f.text_area :inquiry %>
 </p>
 
 <p>
-        <%= f.submit "Update Task" %>
+    <%= f.submit "Edit Task"%>
+   
 </p>
-
 <% end %>

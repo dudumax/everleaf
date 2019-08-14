@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     
     
     def create
-        @user= User.new(params[:id])
+        @user= User.new(params[:post])
         
         if @user.save
             redirect_to users_path, :notice=> "Your user was saved"

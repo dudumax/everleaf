@@ -4,7 +4,7 @@ class TasksController < ApplicationController
     end 
     
     def show
-         @task=Task.find(params[:id])
+      @task=Task.find(params[:id])   
     end 
     
     def new
@@ -12,7 +12,7 @@ class TasksController < ApplicationController
     end 
     
     def create
-          @task=Task.new(params[:id])
+          @task=Task.new(params[:post].permit(:title, :inquiry))
         
         if @task.save
             redirect_to tasks_path, :notice=> "Your task was saved"
@@ -28,7 +28,8 @@ class TasksController < ApplicationController
     
     def update
         @task= Task.find(params[:id])
-        if @task.update_attributes(params[:post])
+        
+        if @task.update_attributes(task_params)
             redirect_to tasks_path , :notice => "Your user has been Updated"
         else
             render 'edit'
@@ -41,5 +42,12 @@ class TasksController < ApplicationController
         redirect_to tasks_path, :notice=> "Your task has been deleted"
         
     end 
+    
+    
+    private
+    
+    def task_params
+        params.require(:task).permit(:attribute, :title, :inquiry)
+    end
 
 end

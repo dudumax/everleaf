@@ -1,10 +1,9 @@
 <h1> Our Blog</h1>
 
 <% @tasks.each do |task| %>
-    <h2><%= task.title %></h2>
+    <h2><%= link_to task.title,task %></h2>
     <p><%=  task.inquiry %></p>
     <p><%= link_to 'Edit', edit_task_path(task) %>
-        <%= link_to 'Show', task %>
         <%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %>
     </p>
     <hr />
