@@ -2,15 +2,15 @@
 
 | Model | Table | column name | data type   |
 |:-----:|:-----:|:-----------:|-------------|
-|  User | users |     name    | text        |
-|       |       |     email   | text        |
+|  User | users |     name    | string      |
+|       |       |     email   | string      |
 |       |       |             |             |
 
 
 | Model | Table | Column Name | Data type |
 |-------|-------|-------------|-----------|
-| Task  | Tasks | Inquiry     | text      |
-|       |       |             |           |
+| Task  | Tasks | Inquiry     | string    |
+|       |       | title       | string    |
 |       |       |             |           |
 
 

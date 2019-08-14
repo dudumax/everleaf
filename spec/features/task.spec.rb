@@ -29,7 +29,7 @@ RSpec.feature "Task management function", type: :feature do
     fill_in "title", :with => "@task.title"
     fill_in "inquiry", :with  => "@task.inquiry"
     click_button  'Add a new Task'
-    expect(page).to have_content "Your task was saved"
+    expect(page).to have_content("@task.title", "@task.inquiry")
   end
   
 

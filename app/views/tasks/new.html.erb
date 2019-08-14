@@ -1,6 +1,17 @@
 <h1> Add a new Task </h1>
 
 <%= form_for @task do |f| %>
+
+
+<% if @task.errors.any? %>
+<h2>Errors:</h2>
+  <ul>
+    <% @task.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>    
+  </ul>
+<% end %>
+    
 <p>
     <%= f.label :title %><br/>
     <%= f.text_field :title, id: "title"  %>
@@ -17,4 +28,6 @@
 
 <% end %>
 
+ 
+ 
  
