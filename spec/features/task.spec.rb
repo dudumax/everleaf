@@ -18,10 +18,10 @@ RSpec.feature "Task management function", type: :feature do
 
   scenario "Test task creation" do
     visit  new_task_path
-    fill_in "name", :with => @user.name
-    fill_in "email", :with  => @user.email
+    fill_in "title", :with => @task.title
+    fill_in "inquiry", :with  => @task.inquiry
     click_button  'Register'
-    expect(page).to have_content("#{@user.name}: #{@user.email}")
+    expect(page).to have_content("#{@task.title}: #{@task.inquiry}")
   end
   
 
