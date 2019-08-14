@@ -3,12 +3,12 @@
 <%= form_for @task do |f| %>
 <p>
     <%= f.label :title %><br/>
-    <%= f.text_field :title  %>
+    <%= f.text_field :title, id: "title"  %>
 </p>
 
 <p>
     <%= f.label :inquiry  %><br/>
-    <%= f.text_area :inquiry %>
+    <%= f.text_area :inquiry, id: "inquiry" %>
 </p>
 
 <p>
