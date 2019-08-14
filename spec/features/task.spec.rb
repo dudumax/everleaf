@@ -4,6 +4,14 @@ require 'rails_helper'
 
 
 RSpec.feature "Task management function", type: :feature do
+  background do
+    # Create two tasks in advance to use in the task list test
+    FactoryBot.create(:task, title: 'Added name 1')
+    FactoryBot.create(:task, title: 'Added name 2')
+    FactoryBot.create(:second_task, title: 'Added name 3', inquiry: 'Added inquiry')
+    Task.create!(title: 'test_task_01', inquiry: 'testtesttest')
+    Task.create!(title: 'test_task_02', inquiry: 'mofmofmofmof')
+  end
  
   scenario "Test task list" do
     Task.create!(title: 'test_task_01', inquiry: 'testtesttest')
@@ -32,7 +40,7 @@ RSpec.feature "Task management function", type: :feature do
   end
   
    scenario "Test whether tasks are arranged in descending order of creation date" do
-    # Write test content here
+    
   end
 
 end
