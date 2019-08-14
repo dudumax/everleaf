@@ -12,6 +12,12 @@
   <body>
     
     
+    <div>
+      Language:
+      <%= link_to_unless_current "English", locale: "en" %>
+      <%= link_to_unless_current "Japanese", locale: "ja" %>
+    </div>
+    
     
     <% flash.each do |key,value| %>
     <p><%= value %></p>
