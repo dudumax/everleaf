@@ -32,15 +32,17 @@ RSpec.feature "Task management function", type: :feature do
     expect(page).to have_content("@task.title", "@task.inquiry")
   end
   
-
-
-
   scenario "Test task details" do
-
+  Task.create!(title: 'test_task_01', content: 'testtesttest')
+  Task.create!(title: 'test_task_03', content: 'samplesample')
+  
   end
   
-   scenario "Test whether tasks are arranged in descending order of creation date" do
-    
+  scenario "Test whether tasks are arranged in descending order of creation date" do
+  visit tasks_path
+  expect(page).to have_content("@task.title", "@task.inquiry")
   end
+  
+
 
 end
