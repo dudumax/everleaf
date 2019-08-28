@@ -3,6 +3,7 @@ require 'rails_helper'
 require 'spec_helper'
 require 'capybara/rails'
 require 'webdrivers'
+require 'launchy'
 
 
 
@@ -28,7 +29,7 @@ RSpec.feature "Task management function", type: :feature do
   
 
   scenario "Test task creation" do
-    visit  new_task_path
+    visit new_task_path
     fill_in "title", :with => "@task.title"
     fill_in "inquiry", :with  => "@task.inquiry"
     click_button  'Add a new Task'
@@ -36,9 +37,8 @@ RSpec.feature "Task management function", type: :feature do
   end
   
   scenario "Test task details" do
-    Task.create!(title: 'test_task_01', inquiry: 'testtesttest')
-    Task.create!(title: 'test_task_02', inquiry: 'samplesample')
     visit tasks_path
+    click_link task_path
     save_and_open_page
     expect(page).to have_content("@task.title", "@task.inquiry")
   end
