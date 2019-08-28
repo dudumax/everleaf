@@ -1,9 +1,9 @@
 example_id                        | status  | run_time        |
 --------------------------------- | ------- | --------------- |
-./spec/calculator_spec.rb[1:1]    | passed  | 0.00103 seconds |
-./spec/features/task.spec.rb[1:1] | failed  | 0.42771 seconds |
-./spec/features/task.spec.rb[1:2] | passed  | 0.03986 seconds |
-./spec/features/task.spec.rb[1:3] | failed  | 0.02693 seconds |
-./spec/features/task.spec.rb[1:4] | passed  | 0.00722 seconds |
+./spec/calculator_spec.rb[1:1]    | passed  | 0.00121 seconds |
+./spec/features/task.spec.rb[1:1] | failed  | 0.4232 seconds  |
+./spec/features/task.spec.rb[1:2] | passed  | 0.03743 seconds |
+./spec/features/task.spec.rb[1:3] | failed  | 0.01603 seconds |
+./spec/features/task.spec.rb[1:4] | passed  | 0.00672 seconds |
 ./spec/models/task_spec.rb[1:1]   | pending | 0.00001 seconds |
 ./spec/models/user_spec.rb[1:1]   | pending | 0.00001 seconds |

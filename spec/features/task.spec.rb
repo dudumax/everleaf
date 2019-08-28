@@ -38,8 +38,8 @@ RSpec.feature "Task management function", type: :feature do
   
   scenario "Test task details" do
     visit tasks_path
-    click_link task_path
     save_and_open_page
+    click_link "task"
     expect(page).to have_content("@task.title", "@task.inquiry")
   end
   
