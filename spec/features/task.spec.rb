@@ -37,7 +37,7 @@ RSpec.feature "Task management function", type: :feature do
   end
   
   scenario "Test task details" do
-    visit task_path
+    visit task_path(Task.first)
     save_and_open_page
     expect(page).to have_content("@task.title", "@task.inquiry")
   end
