@@ -5,5 +5,7 @@ example_id                        | status  | run_time        |
 ./spec/features/task.spec.rb[1:2] | passed  | 0.04149 seconds |
 ./spec/features/task.spec.rb[1:3] | failed  | 0.01992 seconds |
 ./spec/features/task.spec.rb[1:4] | passed  | 0.00695 seconds |
-./spec/models/task_spec.rb[1:1]   | pending | 0.00001 seconds |
+./spec/models/task_spec.rb[1:1]   | passed  | 0.14602 seconds |
+./spec/models/task_spec.rb[1:2]   | passed  | 0.00075 seconds |
+./spec/models/task_spec.rb[1:3]   | passed  | 0.00066 seconds |
 ./spec/models/user_spec.rb[1:1]   | pending | 0.00001 seconds |
