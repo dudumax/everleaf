@@ -39,7 +39,7 @@ RSpec.feature "Task management function", type: :feature do
   scenario "Test task details" do
     visit task_path(Task.first)
     save_and_open_page
-    expect(page).to have_content("@task.title", "@task.inquiry")
+    expect(page).to have_content( 'Added name 1')
   end
   
   scenario "Test whether tasks are arranged in descending order of creation date" do
