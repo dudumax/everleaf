@@ -20,3 +20,11 @@
 | Label | labels | label1_ID   | string    |
 |       |        | label2_ID   | string    |
 |       |        |             |           |
+
+
+# How to deploy to heroku#
+install heroku  (sudo snap install --classic heroku)
+git init
+heroku login --interactive
+heroku create 
+git push heroku master
