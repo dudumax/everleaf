@@ -43,7 +43,10 @@ RSpec.feature "Task management function", type: :feature do
   end
   
   scenario "Test whether tasks are arranged in descending order of creation date" do
-  
+   visit tasks_path
+   save_and_open_page
+   click_button 'Sort by expiration date'
+   expect(page).to have_content('date', 'time')
   end
   
 

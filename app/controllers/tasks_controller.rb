@@ -1,6 +1,10 @@
 class TasksController < ApplicationController
     def index
-        @tasks=Task.all
+      if params[:sort_expired]== 'true'
+          @tasks=Task.order(deadline: :asc)
+      else
+          @tasks=Task.all
+      end
     end 
     
     def show
