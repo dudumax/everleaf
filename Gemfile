@@ -36,6 +36,9 @@ gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'rails-i18n', '~> 5.1'
+gem 'ransack'
+gem 'will_paginate', '~> 3.1', '>= 3.1.8'
+gem 'kaminari', '~> 1.1', '>= 1.1.1'
 
 
 group :development, :test do

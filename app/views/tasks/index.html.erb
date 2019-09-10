@@ -1,5 +1,20 @@
 <h1><%= t('view.sample') %></h1>
 
+<%= form_with url:tasks_path, method: :get , local: true do |f| %>
+  <%= f.label :title_cont, "Title contains" %> 
+  <%= f.text_field :title  %>
+  
+  <%= f.submit  "Search" %>
+<% end %>
+
+<br>
+
+
+  <%= form_with(model: @tasks, url: tasks_path(sort_expired: 'true'), local: true, method: 'get') do |form| %>
+    <%= form.hidden_field :date %>
+    <%= form.submit "Sort by end date" %>
+  <% end %>
+
 
 
 <% @tasks.each do |task| %>
@@ -7,11 +22,12 @@
     <p><%=  task.inquiry %></p>
     <p><%= link_to 'Edit', edit_task_path(task) %>
         <%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %>
-        <%= link_to 'Sort by expiration date', tasks_path(sort_expired: 'true') %>
+        
     </p>
     <hr />
   <% end %>
-  
  
+   
+   
  
   <p><%= link_to "Add a new Task", new_task_path %> </p>
