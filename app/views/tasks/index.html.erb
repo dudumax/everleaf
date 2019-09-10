@@ -9,8 +9,7 @@
 
 <br>
 
-
-  <%= form_with(model: @tasks, url: tasks_path(sort_expired: 'true'), local: true, method: 'get') do |form| %>
+<%= form_with(model: @tasks, url: tasks_path(sort_expired: 'true'), local: true, method: 'get') do |form| %>
     <%= form.hidden_field :date %>
     <%= form.submit "Sort by end date" %>
   <% end %>
@@ -22,10 +21,13 @@
     <p><%=  task.inquiry %></p>
     <p><%= link_to 'Edit', edit_task_path(task) %>
         <%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %>
-        
     </p>
     <hr />
+    
+  
   <% end %>
+  
+  
  
    
    
