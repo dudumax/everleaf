@@ -1,7 +1,7 @@
 class TasksController < ApplicationController
     def index
       if params[:sort_expired]
-          @tasks=Task.deadline
+          @tasks=Task.sort_expired
       else
           @tasks= Task.all
       end
@@ -51,7 +51,7 @@ class TasksController < ApplicationController
     private
     
     def task_params
-        params.require(:task).permit(:attribute, :title, :inquiry, :deadline)
+        params.require(:task).permit(:attribute, :title, :inquiry, :deadline, :status)
     end
     
     
