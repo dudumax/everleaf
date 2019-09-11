@@ -3,10 +3,9 @@
 
 <%= form_with(model: @tasks, url: tasks_path, local: true, method: 'get') do |f| %>
 <p>
-    <%= f.label :title_search %>
-    <%= f.text_field :title, id: "title"  %>
-    <%= f.label :status_search, id: "status" %>
-    <%= f.text_field :status, id: "status"  %>
+    <%= f.label :title_search, "Title" %>
+    <%= f.text_field :title_search %>
+   
     <%= f.submit  'Search'  %>
 </p>
 <% end %>

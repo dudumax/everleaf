@@ -49,7 +49,7 @@ RSpec.feature "Task management function", type: :feature do
    fill_in "deadline", :with => "DateTime"
    click_button 'Add a new Task'
    visit tasks_path
-   click_button 'Sort by end date'
+   click_link ('Sort by end date')
    expect(page).to have_content('date')
   end
   
