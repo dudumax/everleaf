@@ -1,12 +1,19 @@
 <h1><%= t('view.sample') %></h1>
 
-<%= form_with url:tasks_path, method: :get , local: true do |f| %>
-  <%= f.label :title_cont, "Title contains" %> 
+<%= form_with url:tasks_path,method: :get , local: true do |f| %>
+  <%= f.label :title_search, "Title contains" %> 
   <%= f.text_field :title  %>
+  
+  <%= f.label :status_search, "Search contains" %> 
+  <%= f.text_field :status  %> 
+  
+ 
+  <%= f.text_field :Send  %> 
+  
   
  
   
-  <%= f.submit  "Search" %>
+  <%= f.submit  "Send" %>
 <% end %>
 
 <br>
@@ -21,6 +28,7 @@
 <% @tasks.each do |task| %>
     <h2><%= link_to task.title, task %></h2>
     <p><%=  task.inquiry %></p>
+    <p><%=  task.deadline %></p>
     <p><%= link_to 'Edit', edit_task_path(task) %>
         <%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %>
     </p>

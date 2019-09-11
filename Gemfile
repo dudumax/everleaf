@@ -39,6 +39,7 @@ gem 'rails-i18n', '~> 5.1'
 gem 'ransack'
 gem 'will_paginate', '~> 3.1', '>= 3.1.8'
 gem 'kaminari', '~> 1.1', '>= 1.1.1'
+gem 'textacular', '~> 5.0'
 
 
 group :development, :test do
