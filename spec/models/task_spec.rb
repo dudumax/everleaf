@@ -1,5 +1,6 @@
 require 'rails_helper'
 
+
 RSpec.describe Task, type: :model do
   it "Validation does not pass if the title is empty" do
     task = Task.new(title: '', inquiry: 'Failure test')
@@ -19,4 +20,12 @@ RSpec.describe Task, type: :model do
     expect(task).to be_valid
     
   end
+  
+  it "validation does not passes If  status is empty" do
+    # Describe the contents here
+     task = Task.new(title: 'pass Test', inquiry: 'Pass Test', status: '')
+    expect(task).to be_valid
+    
+  end
+ 
 end

@@ -2,12 +2,18 @@
 
 
 <%= form_with(model: @tasks, url: tasks_path, local: true, method: 'get') do |f| %>
+    
 <p>
-    <%= f.label :title_search, "Title" %>
-    <%= f.text_field :title_search %>
-   
+    <%= f.label :title, "Title Search" %>
+    <%= f.text_field :title %>
+    <%= f.label :status, "Status Search" %>
+    <%= f.select :status,Task.statuses.keys, selected: '' %>
+    
+     <%= hidden_field :search, params[:search] %>
+    
     <%= f.submit  'Search'  %>
 </p>
+
 <% end %>
 
 <br>

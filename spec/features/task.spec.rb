@@ -50,9 +50,16 @@ RSpec.feature "Task management function", type: :feature do
    click_button 'Add a new Task'
    visit tasks_path
    click_link ('Sort by end date')
-   expect(page).to have_content('date')
+   expect(page).to have_content("@task.title", "@task.inquiry")
   end
   
+  scenario "Test status details" do
+    visit task_path(Task.first)
+    save_and_open_page
+    fill_in "Title Search", :with => "@task.title"
+    page.select("@task.status", :form => "Status search")
+    expect(page).to have_content( 'Added name 1')
+  end
 
 
 end
