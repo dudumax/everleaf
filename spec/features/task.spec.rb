@@ -60,6 +60,19 @@ RSpec.feature "Task management function", type: :feature do
     page.select("@task.status", :form => "Status search")
     expect(page).to have_content( 'Added name 1')
   end
-
+  
+  scenario "Test priority details" do
+   visit new_task_path
+   fill_in "title", :with => "@task.title"
+   fill_in "inquiry", :with  => "@task.inquiry"
+   fill_in "deadline", :with => "DateTime"
+   page.select("@task.priority", :form => "priority")
+   click_button 'Add a new Task'
+   visit tasks_path
+   click_link ('Sort by end date')
+   expect(page).to have_content("@task.title", "@task.inquiry")
+  end
+  
+  
 
 end

@@ -7,11 +7,12 @@ class Task < ApplicationRecord
 
     
     enum status: { Not_started: 0, Undertaking: 1, Completed: 2 }
-    
+    enum priority: {high: 0, medium: 1, low: 2}
     
     scope :sort_expired, -> { order(deadline: :asc) }
     scope :search_title, ->(title) { where("title LIKE ?", "%#{ title }%") }
     scope :search_status, ->(status) { where("status = ?", status) }
+    scope :sort_priority, ->{order(priority: asc)}
     
     def self.search(title, status)
     s = status.to_i

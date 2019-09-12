@@ -23,6 +23,7 @@
     <h2><%= link_to task.title, task %></h2>
     <p><%=  task.inquiry %></p>
     <p><%=  task.deadline %></p>
+    <p><%=  task.priority %></p>
     <p><%= link_to 'Edit', edit_task_path(task) %>
         <%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %>
     </p>

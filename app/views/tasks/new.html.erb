@@ -29,6 +29,12 @@
 </p>
 
 <p>
+    <%= f.label :priority, id: "priority" %><br>
+    <%= f.select :priority,Task.priorities.keys, selected: '' %>
+</p>
+
+
+<p>
     <%= f.submit "Add a new Task"%>
 </p>
 

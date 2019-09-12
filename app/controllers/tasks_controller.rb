@@ -5,6 +5,8 @@ class TasksController < ApplicationController
      @tasks = Task.search(params[:task][:title], params[:task][:status])
     elsif params[:sort_expired]
      @tasks=Task.sort_expired
+     elsif params[:sort_priority]
+     @tasks=Task.sort_priority
     elsif
      @tasks= Task.all
     end
