@@ -1,15 +1,19 @@
 class TasksController < ApplicationController
+    
+
     def index
         
     if params[:search]
      @tasks = Task.search(params[:task][:title], params[:task][:status])
-    elsif params[:sort_expired]
+     elsif params[:sort_expired]
      @tasks=Task.sort_expired
      elsif params[:sort_priority]
      @tasks=Task.sort_priority
-    elsif
+     elsif
      @tasks= Task.all
     end
+    
+    @tasks=Task.page(params[:page]).per(3)
     end 
     
     def show 

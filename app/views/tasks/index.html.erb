@@ -1,5 +1,7 @@
 <h1><%= t('view.sample') %></h1>
 
+<%= paginate @tasks %>
+
 
 <%= form_with(model: @tasks, url: tasks_path, local: true, method: 'get') do |f| %>
     
