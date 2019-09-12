@@ -5,11 +5,11 @@ class TasksController < ApplicationController
         
     if params[:search]
      @tasks = Task.search(params[:task][:title], params[:task][:status])
-     elsif params[:sort_expired]
+    elsif params[:sort_expired]
      @tasks=Task.sort_expired
-     elsif params[:sort_priority]
+    elsif params[:sort_priority]
      @tasks=Task.sort_priority
-     elsif
+    elsif
      @tasks= Task.all
     end
     
@@ -26,6 +26,7 @@ class TasksController < ApplicationController
     
     def create
           @task=Task.new(task_params)
+          @task.user_id = current_user.id
         
         if @task.save
             redirect_to tasks_path, :notice=> "Your task was saved"

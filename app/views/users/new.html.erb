@@ -1,20 +1,35 @@
-<h1> Add a new User. </h1>
+<h1> Sign up </h1>
+
+<% if @user.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@user.errors.count, "error") %> prohibited this @user from being saved:</h2>
+    <ul>
+    <% @user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
 
 
 
 <%= form_for @user do |f| %>
 <p>
-    <%= f.label :name%><br/>
-    <%= f.text_field :name %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :email %>
+  <%= f.email_field :email %>
+
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+
+  <%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation %>
 </p>
 
 <p>
-    <%= f.label :email%><br/>
-    <%= f.text_field :email %>
-</p>
-
-<p>
-    <%= f.submit "Add a new User"%>
+    <%= f.submit "Create my  Account"%>
    
 </p>
 
