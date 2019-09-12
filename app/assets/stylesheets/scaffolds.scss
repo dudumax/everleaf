@@ -82,3 +82,23 @@ div {
 label {
   display: block;
 }
+
+
+div.c {
+  position: absolute;
+  right: 150px;
+  width: 200px;
+  height: 120px;
+  border: 3px solid none;
+}
+
+div.b {
+  width: 100%;
+  background-color: #FCF6CF;
+  height: 54px;
+}
+
+
+.containerr {
+    display: inline-block;
+}

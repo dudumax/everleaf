@@ -10,19 +10,31 @@
   </head>
 
   <body>
+    <header >
+    <ul>
+      
+      <li> <p><%= link_to "Home",tasks_path %> </p></li>
+       <li> <p><%= link_to "Add a new Task", new_task_path %> </p></li>
+    </ul>
     
-    
-    <div>
+   <div class ="c">
       Language:
       <%= link_to_unless_current "English", locale: "en" %>
       <%= link_to_unless_current "Japanese", locale: "ja" %>
     </div>
-    
-    
+</header>
+
+  
     <% flash.each do |key,value| %>
     <p><%= value %></p>
     <% end %>
     
     <%= yield %>
+    
+    <footer>
+    <p>Operating company DIVE INTO CODE</p>
+    <p>© 2015-2016 Copyright DIVE INTO CODE Corp.</p>
+  </footer>
+    
   </body>
 </html>
