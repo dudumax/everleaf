@@ -27,7 +27,7 @@
 
 <br>
    <li>
-    <%= link_to "Sort by end date", root_path(sort_expired: "true")%>
+    <%= link_to "Sort by end date", root_path(sort_expired: "true"), class: "btn btn-large btn-primary"%>
     </li>
   </ul>
 </nav>
@@ -51,7 +51,7 @@
   <% end %>
   
   <p>
-      <%= link_to "Add a new Task", new_task_path %>
+      <%= link_to "Add a new Task", new_task_path, class: "btn btn-large btn-primary" %>
  
   </p>
       </div>
