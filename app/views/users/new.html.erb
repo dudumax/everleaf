@@ -1,4 +1,8 @@
-<h1> Sign up </h1>
+<h1 class="mb-5"><%= t('view.title.user.Sign up') %> </h1>
+
+
+
+
 
 <% if @user.errors.any? %>
   <div id="error_explanation">
@@ -7,29 +11,36 @@
     <% @user.errors.full_messages.each do |message| %>
       <li><%= message %></li>
     <% end %>
+     <button type="button" class="close" data-dismiss="alert">&times;</button>
     </ul>
   </div>
 <% end %>
 
 
-
-<%= form_for @user do |f| %>
-<p>
+<%= form_with(model: @user, local: true) do |f| %>
+ <div class="mt-3">
   <%= f.label :name %>
-  <%= f.text_field :name %>
-
+  <%= f.text_field :name,class: 'form-control' %>
+   </div>
+   
+   <div class="mt-3">
   <%= f.label :email %>
-  <%= f.email_field :email %>
-
+  <%= f.email_field :email,class: 'form-control' %>
+  </div>
+  
+   <div class="mt-3">
   <%= f.label :password %>
-  <%= f.password_field :password %>
-
+  <%= f.password_field :password,class: 'form-control' %>
+   </div>
+   
+   <div class="mt-3">
   <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %>
-</p>
+  <%= f.password_field :password_confirmation,class: 'form-control' %>
+  </div>
+   
 
 <p>
-    <%= f.submit "Create my  Account"%>
+    <%= f.submit "Create my  Account", class: "btn btn-outline-primary mt-5"%>
    
 </p>
 

@@ -25,8 +25,7 @@ class TasksController < ApplicationController
     end 
     
     def create
-          @task=Task.new(task_params)
-          @task.user_id = current_user.id
+          @task=current_user.tasks.build(task_params)
         
         if @task.save
             redirect_to tasks_path, :notice=> "Your task was saved"
