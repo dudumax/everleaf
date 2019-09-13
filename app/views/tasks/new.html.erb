@@ -28,6 +28,12 @@
     <%= f.text_area :deadline, id: "deadline" %>
 </p>
 
+
+<p>
+    <%= f.label :status, id: "status" %>
+    <%= f.select :status,Task.statuses.keys, selected: '' %>
+</p>
+
 <p>
     <%= f.label :priority, id: "priority" %><br>
     <%= f.select :priority,Task.priorities.keys, selected: '' %>
