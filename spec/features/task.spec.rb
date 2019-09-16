@@ -6,8 +6,14 @@ require 'webdrivers'
 require 'launchy'
 
 
-
 RSpec.feature "Task management function", type: :feature do
+  
+  
+  before do
+  user = User.new(name: "test", email: "test@gmail.com", password: "password", password_confirmation: "password")
+　expect(user.save).to eq true
+ end
+
   background do
     # Create two tasks in advance to use in the task list test
     FactoryBot.create(:task, title: 'Added name 1')
@@ -18,8 +24,8 @@ RSpec.feature "Task management function", type: :feature do
   end
  
   scenario "Test task list" do
-    Task.create!(title: 'test_task_01', inquiry: 'testtesttest')
-    Task.create!(title: 'test_task_02', inquiry: 'samplesample')
+    Task.create!(title: 'test_task_01', inquiry: 'testtesttest', deadline: '%y-%m-%d')
+    Task.create!(title: 'test_task_02', inquiry: 'samplesample', deadline: '%y-%m-%d')
     visit tasks_path
     save_and_open_page
     expect(page).to have_content 'testtesttest'
@@ -32,6 +38,7 @@ RSpec.feature "Task management function", type: :feature do
     visit new_task_path
     fill_in "title", :with => "@task.title"
     fill_in "inquiry", :with  => "@task.inquiry"
+    fill_in "deadline", :with  => "@task.deadline"
     click_button  'Add a new Task'
     expect(page).to have_content("@task.title", "@task.inquiry")
   end
@@ -46,7 +53,7 @@ RSpec.feature "Task management function", type: :feature do
    visit new_task_path
    fill_in "title", :with => "@task.title"
    fill_in "inquiry", :with  => "@task.inquiry"
-   fill_in "deadline", :with => "DateTime"
+   fill_in "deadline", :with => "@task.deadline"
    click_button 'Add a new Task'
    visit tasks_path
    click_link ('Sort by end date')
@@ -58,7 +65,8 @@ RSpec.feature "Task management function", type: :feature do
     save_and_open_page
     fill_in "Title Search", :with => "@task.title"
     page.select("@task.status", :form => "Status search")
-    expect(page).to have_content( 'Added name 1')
+     click_button 'Search'
+    expect(page).to have_content( '@task.status')
   end
   
   scenario "Test priority details" do
