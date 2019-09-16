@@ -66,6 +66,7 @@ RSpec.feature "Task management function", type: :feature do
    fill_in "title", :with => "@task.title"
    fill_in "inquiry", :with  => "@task.inquiry"
    fill_in "deadline", :with => "DateTime"
+   page.select("@task.status", :form => "status")
    page.select("@task.priority", :form => "priority")
    click_button 'Add a new Task'
    visit tasks_path

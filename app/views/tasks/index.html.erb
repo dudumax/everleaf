@@ -6,28 +6,29 @@
     
 <nav class= "menu">
   <ul>
-   <li><%= paginate @tasks %></li>
+<li><%= paginate @tasks %></li>
 
-
-<%= form_with(model: @tasks, url: tasks_path, local: true, method: 'get') do |f| %>
- <li>   
-<p>
+<%= search_form_for @q do |f| %>
+ <div class ="field">
     <%= f.label :title, "Title Search" %>
-    <%= f.text_field :title %>
+    <%= f.search_field :title_cont  %>
+</div>
+
+
+ <div class ="field">
     <%= f.label :status, "Status Search" %>
-    <%= f.select :status,Task.statuses.keys, selected: '' %>
-    
-     <%= hidden_field :search, params[:search] %>
-    
-    <%= f.submit  'Search'  %>
-</p>
-</li>
+    <%= f.select :status_eq, options_for_select([
+        [:Not_started],[:Undertaking],[ :Completed] ]), include_blank: true  %>
+</div>
+
+<div  class="actions"> <%= f.submit  'Search'  %></div>
+
 
 <% end %>
 
 <br>
    <li>
-    <%= link_to "Sort by end date", root_path(sort_expired: "true"), class: "btn btn-large btn-primary"%>
+     <%= sort_link(@q, :deadline, 'Sort by end date', default_order: :asc) %>
     </li>
   </ul>
 </nav>
@@ -45,7 +46,7 @@
     <p><%= link_to 'Edit', edit_task_path(task) %>
         <%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %>
     </p>
-    <hr />
+   <hr/>
     
   
   <% end %>
@@ -56,6 +57,6 @@
   </p>
       </div>
     </article>
-  
+       
     </div>
   </div>

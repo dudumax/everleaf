@@ -27,5 +27,12 @@ RSpec.describe Task, type: :model do
     expect(task).to be_valid
     
   end
+  
+  it "validation does not passes If search fails" do
+    # Describe the contents here
+     task = Task.search(title: 'pass Test', status: 'Pass Test')
+     expect(task).to be_valid
+    
+  end
  
 end

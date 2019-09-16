@@ -31,12 +31,12 @@
 
 <p>
     <%= f.label :status, id: "status" %>
-    <%= f.select :status,Task.statuses.keys, selected: '' %>
+    <%= f.select :status,Task.statuses.keys, selected: '',include_blank: true %>
 </p>
 
 <p>
     <%= f.label :priority, id: "priority" %><br>
-    <%= f.select :priority,Task.priorities.keys, selected: '' %>
+    <%= f.select :priority,Task.priorities.keys, selected: '',include_blank: true %>
 </p>
 
 
