@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+     paginates_per 3
      has_many :tasks
     
     validates :name, presence: true,length: { maximum: 30 }

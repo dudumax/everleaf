@@ -11,12 +11,7 @@
 
   <body>
     
-   <div class ="c">
-      Language:
-      <%= link_to_unless_current "English", locale: "en" %>
-      <%= link_to_unless_current "Japanese", locale: "ja" %>
-    </div>
-
+   
 
   
     <% flash.each do |key,value| %>
@@ -33,6 +28,14 @@
             <li> <p><%= link_to "Home",tasks_path %> </p></li>
             <li> <p><%= link_to "Add a new Task", new_task_path %> </p></li>
             </ul>
+            
+            
+            <div class ="c">
+      Language:
+      <%= link_to_unless_current "English", locale: "en" %>
+      <%= link_to_unless_current "Japanese", locale: "ja" %>
+    </div>
+
         </header>
         <%= link_to "Profile", user_path(current_user.id) %>
          <%= link_to "Logout", session_path(current_user.id), method: :delete %>
@@ -42,6 +45,7 @@
             </div>
             </div>
         <% else %>
+        <header></header>
            <%= link_to "Sign up", new_user_path %>
            <%= link_to "Login", new_session_path %>
         <% end %>
