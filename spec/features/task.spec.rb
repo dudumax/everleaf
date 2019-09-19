@@ -8,11 +8,6 @@ require 'launchy'
 
 RSpec.feature "Task management function", type: :feature  do
   
-  before do
-    sign_in(user)
-  end
-  
- 
   scenario "Test task list" do
     Task.create!(title: 'test_task_01', inquiry: 'testtesttest', deadline: DateTime )
     Task.create!(title: 'test_task_02', inquiry: 'samplesample', deadline: DateTime)
