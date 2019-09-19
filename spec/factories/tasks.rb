@@ -1,11 +1,10 @@
 FactoryBot.define do
   factory :task do
-    title { "MyString" }
-    inquiry { "MyString" }
-  end
-  
-  factory :second_task, class: Task do
-    title { "MyString" }
-    inquiry { "MyString"}
+    user
+    title { "Added name 1" }
+    inquiry { "added inquiry 1" }
+    deadline {DateTime}
+    status {"integer"}
+    priority {"integer"}  
   end
 end
