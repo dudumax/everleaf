@@ -11,7 +11,7 @@
 
   <body>
     
-   
+   <%= render 'layouts/navigation' %>
 
   
     <% flash.each do |key,value| %>
@@ -23,29 +23,16 @@
     <% end %>
     
      <% if logged_in? %>
-         <header >
-            <ul>
-            <li> <p><%= link_to "Home",tasks_path %> </p></li>
-            <li> <p><%= link_to "Add a new Task", new_task_path %> </p></li>
-            </ul>
-            
-            
-            <div class ="c">
+          
       Language:
-      <%= link_to_unless_current "English", locale: "en" %>
-      <%= link_to_unless_current "Japanese", locale: "ja" %>
-    </div>
-
-        </header>
-        <%= link_to "Profile", user_path(current_user.id) %>
-         <%= link_to "Logout", session_path(current_user.id), method: :delete %>
-            </div>
-            <div id="gnavi" class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-            </div>
-            </div>
+     <%= link_to_unless_current "English", locale: "en" %>
+     <%= link_to_unless_current "Japanese", locale: "ja" %>
+           
+         <ul class="nav navbar-nav">
+       <li><%= link_to "Profile", user_path(current_user.id) %></li>
+        <li><%= link_to "Logout", session_path(current_user.id), method: :delete %></li>
+          </ul>  
         <% else %>
-        <header></header>
            <%= link_to "Sign up", new_user_path %>
            <%= link_to "Login", new_session_path %>
         <% end %>
@@ -53,6 +40,7 @@
     
     <%= yield %>
     
+    <%= debug(params) if Rails.env.development? %>
  <footer>
     <p>Operating company DIVE INTO CODE</p>
     <p>© 2015-2016 Copyright DIVE INTO CODE Corp.</p>

@@ -5,6 +5,8 @@ class TasksController < ApplicationController
         @q=Task.ransack(params[:q])
         @tasks= @q.result.page(params[:page])
         
+      
+        
        
     end 
     
@@ -18,6 +20,7 @@ class TasksController < ApplicationController
     
     def create
           @task=current_user.tasks.build(task_params)
+          @task.user= User.find(params[:id])
         
         if @task.save
             redirect_to tasks_path, :notice=> "Your task was saved"
@@ -53,10 +56,8 @@ class TasksController < ApplicationController
     
     def task_params
        params.require(:task).permit(:attribute, :title, :inquiry, :deadline,:search, :status)
-    
     end
     
-    
-    
+     
 
 end

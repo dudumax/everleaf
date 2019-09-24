@@ -1,6 +1,7 @@
 class Admin::UsersController < ApplicationController
   
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :admin_user,     only: [:destroy]
 
   def index
     @users = User.includes(:tasks).page(params[:page])
@@ -56,5 +57,12 @@ class Admin::UsersController < ApplicationController
 
  def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation, :admin)
+ end
+ 
+ 
+ def require_admin
+     if !current_user.admin?
+           redirect_to benefits_path
+     end
  end
 end

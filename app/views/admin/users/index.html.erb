@@ -1,5 +1,20 @@
 <h1> User List screen of management Screen </h1>
 
+
 <% @users.each do |user| %>
-  <% user.id %>:<% user.name %>
-<% end %>
+      <p>
+        <% user.id %>:<% user.name %>
+        <%= user.name %>
+        <%= user.email %>
+        <%= user.tasks.count %>
+        <% if user.admin %>〇<% end %>
+
+        <%= link_to t('view.link.admin.show'), admin_user_path(user) %>
+        <%= link_to t('view.link.admin.edit'), edit_admin_user_path(user) %>
+      </p>
+    <% end %>
+
+
+<%= paginate @users %>
+
+<%= link_to t('view.link.admin.new'), new_admin_user_path, class: "btn btn-outline-secondary mt-5" %>

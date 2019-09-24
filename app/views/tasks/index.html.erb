@@ -1,4 +1,4 @@
-<h1><%= t('view.sample') %></h1>
+<h1 align = "center" ><%= t('view.sample') %></h1>
 
 
 <div class = "container">
@@ -6,7 +6,8 @@
     
 <nav class= "menu">
   <ul>
-<li><%= paginate @tasks %></li>
+      
+
 
 <%= search_form_for @q do |f| %>
  <div class ="field">
@@ -38,16 +39,23 @@
     <div class="contents">
 
 <% @tasks.each do |task| %>
+<div class="row">
+  <div class="col-xs-8 col-xs-offset-2">
+   <div class="well well-lg">
+    <div class="article-title">
     <h2><%= link_to task.title, task %></h2>
     <p><%=  task.inquiry %></p>
     <p><%=  task.deadline %></p>
     <p><%=  task.status %></p>
     <p><%=  task.priority %></p>
-    <p><%= link_to 'Edit', edit_task_path(task) %>
-        <%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <p><%= link_to 'Edit', edit_task_path(task), class: "btn btn-xs btn-primary" %> |
+        <%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' },  class: "btn btn-xs btn-success" %>
     </p>
    <hr/>
-    
+    </div>
+   </div>
+  </div>
+ </div>
   
   <% end %>
   

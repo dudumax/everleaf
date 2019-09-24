@@ -8,6 +8,10 @@ require 'launchy'
 
 RSpec.feature "Task management function", type: :feature  do
   
+   background do
+      FactoryBot.create(:user, name: 'user',email: "user@example.com", password: "password",password_confirmation: "password")
+   end
+  
   scenario "Test task list" do
     Task.create!(title: 'test_task_01', inquiry: 'testtesttest', deadline: DateTime )
     Task.create!(title: 'test_task_02', inquiry: 'samplesample', deadline: DateTime)
@@ -20,11 +24,11 @@ RSpec.feature "Task management function", type: :feature  do
 
   scenario "Test task creation" do
     visit new_task_path
-    fill_in "title", :with => "@task.title"
-    fill_in "inquiry", :with  => "@task.inquiry"
-    fill_in "deadline", :with  => DateTime
-    select 0, :from => "@task.status"
-    select 0, :from => "@task.priority"
+    fill_in "Title", :with => "Added name 1"
+    fill_in "Inquiry", :with  => "added inquiry 1"
+    fill_in "Deadline", :with  => DateTime
+    select "Not_started", :from => "@task.status"
+    select "high", :from => "@task.priority"
     click_button  'Add a new Task'
     expect(page).to have_content("title", "inquiry", DateTime)
   end
@@ -42,8 +46,8 @@ RSpec.feature "Task management function", type: :feature  do
   
   scenario "Test status details" do
     visit tasks_path
-    fill_in "title", :with => "@task.title"
-    select("Completed", :form => "Status search")
+    fill_in "title", :with => "Added name 1"
+    select "Completed", :form => "Status search"
     click_button 'Search'
     expect(page).to have_content( '@task.deadline: :asc')
   end
@@ -53,8 +57,8 @@ RSpec.feature "Task management function", type: :feature  do
    fill_in "title", :with => "@task.title"
    fill_in "inquiry", :with  => "@task.inquiry"
    fill_in "deadline", :with => "DateTime"
-   select("Not_started", :from => "status")
-   select("high", :from => "priority")
+   select "Not_started", :from => "status"
+   select "high", :from => "priority"
    click_button 'Add a new Task'
    visit tasks_path
    click_link ('Sort by end date')

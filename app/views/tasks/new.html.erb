@@ -31,7 +31,7 @@
 
 <p>
     <%= f.label :status, id: "status" %>
-    <%= f.select :status,Task.statuses.keys, selected: '@task.status_before_type_cast',include_blank: true, id: "status" %>
+    <%= f.select :status,Task.statuses.keys, selected: '@task.status_before_type_cast',include_blank: true, disabled: '',id: "status" %>
 </p>
 
 <p>
