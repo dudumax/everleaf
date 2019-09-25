@@ -10,10 +10,9 @@
   </head>
 
   <body>
+   
+    <%= render 'layouts/navigation' %>
     
-   <%= render 'layouts/navigation' %>
-
-  
     <% flash.each do |key,value| %>
     <p><%= value %></p>
     <% end %>

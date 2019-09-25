@@ -1,37 +1,44 @@
 <h1 align = "center" ><%= t('view.sample') %></h1>
 
 
-<div class = "container">
-    <div class = "row">
-    
-<nav class= "menu">
-  <ul>
+<div class="row">
+  <div class="col-sm-12">
+    <%= paginate @tasks %>
+  </div>
+</div>
+
+<nav class="navbar navbar-default">
+<div class="container-fluid">
+ <div class="panel-body">
+   <%= search_form_for @q, class: 'mb-5' do |f| %>
+    <div class="row">   
+      <div class="col-sm-6">
+      <div class="form-group">
+     <%= f.label :title, "Title Search", class: 'col-sm-2 col-form-label' %>
+     <%= f.search_field :title_cont, class: 'form-control'  %>
+       </div>
+      </div>
+     
+     <div class="col-sm-6">
+      <div class="form-group">
+     <%= f.label :status, "Status Search" %>
+     <%= f.select :status_eq, options_for_select([
+        [:Not_started],[:Undertaking],[ :Completed] ]), include_blank: true, class: 'form-control'  %>
+       </div>
+      </div>
+   
+          <%= f.submit  'Search' , class: "btn btn-primary" %>
+           
       
-
-
-<%= search_form_for @q do |f| %>
- <div class ="field">
-    <%= f.label :title, "Title Search" %>
-    <%= f.search_field :title_cont  %>
-</div>
-
-
- <div class ="field">
-    <%= f.label :status, "Status Search" %>
-    <%= f.select :status_eq, options_for_select([
-        [:Not_started],[:Undertaking],[ :Completed] ]), include_blank: true  %>
-</div>
-
-<div  class="actions"> <%= f.submit  'Search'  %></div>
-
-
-<% end %>
-
-<br>
-   <li>
+    <% end %>
+  </div> 
+   
+ <div class="row"> 
+ <button type="button" class="btn btn-success">
      <%= sort_link(@q, :deadline, 'Sort by end date', default_order: :asc) %>
-    </li>
-  </ul>
+     </button>
+  </div>
+</div>
 </nav>
 
 
