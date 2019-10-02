@@ -11,13 +11,12 @@ RSpec.feature "Task management function", type: :feature  do
     background do
     FactoryBot.create(:task, title: 'Added name 1')
     FactoryBot.create(:task, title: 'Added name 2')
-    FactoryBot.create(:second_task, title: 'Added name 3', content: 'Added content')
+    
     end
   
   
   scenario "Test task list" do
-    User.create!(name: 'user', email: 'user@example.com', password: 'password', password_confirmation: 'password')
-    Task.create!(title: 'test_task_01', inquiry: 'testtesttest', deadline: DateTime )
+    Task.create!(title: 'test_task_01', inquiry: 'testtesttest', deadline: '2019.10.31'  )
     Task.create!(title: 'test_task_02', inquiry: 'samplesample', deadline: DateTime)
     visit tasks_path
     expect(page).to have_content 'testtesttest'
