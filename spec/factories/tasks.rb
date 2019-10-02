@@ -4,7 +4,7 @@ FactoryBot.define do
     title { "Added name 1" }
     inquiry { "added inquiry 1" }
     deadline {DateTime}
-    status {"integer"}
-    priority {"integer"}  
+    status {0}
+    priority {0}  
   end
 end

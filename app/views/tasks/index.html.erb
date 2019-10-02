@@ -1,11 +1,10 @@
+
 <h1 align = "center" ><%= t('view.sample') %></h1>
 
 
-<div class="row">
-  <div class="col-sm-12">
-    <%= paginate @tasks %>
-  </div>
-</div>
+
+
+
 
 <nav class="navbar navbar-default">
 <div class="container-fluid">
@@ -15,7 +14,7 @@
       <div class="col-sm-6">
       <div class="form-group">
      <%= f.label :title, "Title Search", class: 'col-sm-2 col-form-label' %>
-     <%= f.search_field :title_cont, class: 'form-control'  %>
+     <%= f.search_field :title_cont, :placeholder=> 'Title search' ,class: 'form-control' , id: "title search" %>
        </div>
       </div>
      
@@ -26,8 +25,10 @@
         [:Not_started],[:Undertaking],[ :Completed] ]), include_blank: true, class: 'form-control'  %>
        </div>
       </div>
+      
+       <%= f.hidden_field :search, value: 'true' %>
    
-          <%= f.submit  'Search' , class: "btn btn-primary" %>
+       <%= f.submit  'Search' , class: "btn btn-primary" %>
            
       
     <% end %>
@@ -75,3 +76,8 @@
        
     </div>
   </div>
+
+
+  
+
+
