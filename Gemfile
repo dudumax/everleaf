@@ -38,7 +38,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'rails-i18n', '~> 5.1'
 gem 'ransack'
-gem 'kaminari', '~> 1.1', '>= 1.1.1'
+gem 'kaminari', '~> 1.2'
 gem 'textacular', '~> 5.0'
 
 
